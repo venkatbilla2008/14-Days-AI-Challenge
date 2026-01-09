@@ -1,3 +1,54 @@
+# 🚀 14 Days AI Challenge – Databricks Lakehouse + AI & ML Pipeline
+
+This repository contains my hands-on work from the **14 Days AI Challenge**, focused on building an **enterprise-grade Databricks Lakehouse architecture** for large-scale ecommerce data ingestion, processing, and AI & ML-based analytics.
+
+The project demonstrates how to ingest large datasets, structure them using **Unity Catalog + Volumes**, apply **Bronze → Silver → Gold** transformations, and prepare data for **sentiment analysis, topic modeling, and BI consumption**.
+
+---
+
+## 📌 Project Objectives
+
+- Build a **Lakehouse architecture** using Databricks
+- Ingest large ecommerce datasets (5GB+ CSV files)
+- Use **Unity Catalog + Volumes** for governed storage
+- Design **Bronze, Silver, Gold** layers
+- Enable **AI & ML pipelines**
+- Prepare data for **Power BI / Analytics consumption**
+- Maintain **Git-based version control** using Databricks Repos
+
+---
+
+## 🏗️ Architecture Overview
+
+Source (CSV / ZIP files)
+↓
+Bronze Layer (Raw data in Volumes)
+↓
+Silver Layer (Cleaned & validated data)
+↓
+Gold Layer (Aggregations, KPIs, Features)
+↓
+BI / AI & ML Models
+
+---
+
+## 🧰 Tech Stack
+
+- **Databricks (Apache Spark)**
+- **Unity Catalog & Volumes**
+- **Python / PySpark**
+- **SQL**
+- **AI & ML**
+- **GitHub (Version Control)**
+- **Power BI (Downstream consumption – planned)**
+
+---
+
+## 📊 Dataset
+
+- Monthly ecommerce event data (e.g., `2019-Oct.csv`, `2019-Nov.csv`)
+- Large files (~5GB+)
+- Stored and managed using:
 
 ---
 
@@ -10,11 +61,11 @@
 5. **Convert to Parquet for performance**
 6. **Apply transformations (Silver)**
 7. **Create aggregations / features (Gold)**
-8. **Prepare for NLP & BI**
+8. **Prepare for AI & ML**
 
 ---
 
-## 🤖 NLP & AI Use Cases (In Progress)
+## 🤖 AI & ML (In Progress)
 
 - Sentiment Analysis on customer interactions
 - Topic Modeling on feedback / reviews
@@ -27,7 +78,7 @@
 
 This project mirrors real enterprise use cases from companies like:
 - **Netflix** – content & user behavior analytics
-- **Comcast** – customer support NLP & churn prediction
+- **Comcast** – customer support AI & ML churn prediction
 - **Shell** – large-scale data processing & forecasting
 
 ---
@@ -46,7 +97,7 @@ This repository demonstrates:
 ## 👤 Author
 
 **Venkat Murali**  
-Manager - Analytics | NLP | Databricks | Power BI | AI Pipelines
+Program Manager - Analytics | AI & ML | Power BI | AI Pipelines
 
 GitHub: https://github.com/venkatbilla2008
 
@@ -55,6 +106,5 @@ GitHub: https://github.com/venkatbilla2008
 ## 📌 Next Steps
 
 - Implement Silver & Gold transformations
-- Add full NLP pipeline (BERT-based sentiment)
-- Integrate with Power BI
-- Add CI/CD for Databricks workflows
+- Add full AI & ML pipeline 
+
