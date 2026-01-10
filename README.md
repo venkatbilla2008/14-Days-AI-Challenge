@@ -1,14 +1,14 @@
-# 🚀 14 Days AI Challenge -- Databricks Lakehouse + Apache Spark + NLP
+# 🚀 14 Days AI Challenge -- Databricks Lakehouse + Apache Spark + AI & ML
 
 This repository documents my hands-on journey through the **14 Days AI
 Challenge**, focused on building an **enterprise-grade Databricks
 Lakehouse architecture** for large-scale ecommerce data ingestion,
-transformation, and AI/NLP analytics.
+transformation, and AI & ML analytics.
 
 The project demonstrates: - Real-world **data engineering workflows** -
 **Unity Catalog + Volumes** based ingestion - **Bronze → Silver → Gold**
 architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
-**NLP, Sentiment Analysis & Power BI integration**
+**AI & ML, Sentiment Analysis & Power BI integration**
 
 ------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
 -   Ingest **large ecommerce datasets (5GB+)**\
 -   Use **Unity Catalog + Volumes** for governed storage\
 -   Practice **Apache Spark transformations**\
--   Prepare data for **NLP, sentiment analysis & BI**\
+-   Prepare data for **AI & ML, sentiment analysis & BI**\
 -   Maintain **Git-based version control** using Databricks Repos +
     GitHub
 
@@ -34,7 +34,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
             ↓
     Gold Layer (Aggregations, KPIs, Features)
             ↓
-    BI / NLP / ML Models
+    BI / AI & ML / ML Models
 
 ------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
     ├── bronze/
     ├── silver/
     ├── gold/
-    ├── nlp/
+    ├── AI & ML/
     ├── schema_volume_setup/
     └── README.md
 
@@ -60,7 +60,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
 -   **Unity Catalog & Volumes**
 -   **Python / PySpark**
 -   **SQL**
--   **NLP (Sentiment, Topic Modeling, BERT -- upcoming)**
+-   **AI & ML (Sentiment, Topic Modeling, BERT -- upcoming)**
 -   **GitHub (Version Control)**
 -   **Power BI (Downstream consumption -- upcoming)**
 
@@ -73,7 +73,7 @@ Catalog & Volumes - Industry use cases (Netflix, Comcast, Shell)
 
 ------------------------------------------------------------------------
 
-# 📅 Day 2 -- Apache Spark Fundamentals (10th Jan 2026)
+# 📅 Day 2 -- Apache Spark Fundamentals 
 
 Covered: - Notebook magic commands (%python, %sql, %fs) - DataFrames vs
 RDDs - Reading CSV, Parquet, JSON - Select, Filter, GroupBy, WithColumn,
@@ -83,6 +83,6 @@ Distinct, OrderBy - Writing Parquet, CSV, Tables
 
 ## 👤 Author
 
-**Venkat Billa**\
-Databricks \| Apache Spark \| NLP \| Power BI \| AI Pipelines\
+**Venkat M**\
+Databricks | Apache Spark | AI & ML | Power BI | AI Pipelines
 GitHub: https://github.com/venkatbilla2008
