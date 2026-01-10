@@ -83,6 +83,6 @@ Distinct, OrderBy - Writing Parquet, CSV, Tables
 
 ## 👤 Author
 
-**Venkat Billa**\
+**Venkat M**\
 Databricks \| Apache Spark \| NLP \| Power BI \| AI Pipelines\
 GitHub: https://github.com/venkatbilla2008
