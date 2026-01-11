@@ -1,26 +1,14 @@
-<<<<<<< Updated upstream
-# 🚀 14 Days AI Challenge -- Databricks Lakehouse + Apache Spark + NLP
-=======
 # 🚀 14 Days AI Challenge -- Databricks Lakehouse + Apache Spark + AI & ML
->>>>>>> Stashed changes
 
 This repository documents my hands-on journey through the **14 Days AI
 Challenge**, focused on building an **enterprise-grade Databricks
 Lakehouse architecture** for large-scale ecommerce data ingestion,
-<<<<<<< Updated upstream
-transformation, and AI/NLP analytics.
-=======
 transformation, and **AI & ML analytics**.
->>>>>>> Stashed changes
 
 The project demonstrates: - Real-world **data engineering workflows** -
 **Unity Catalog + Volumes** based ingestion - **Bronze → Silver → Gold**
 architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
-<<<<<<< Updated upstream
-**NLP, Sentiment Analysis & Power BI integration**
-=======
 **AI, ML & Power BI integration**
->>>>>>> Stashed changes
 
 ------------------------------------------------------------------------
 
@@ -30,11 +18,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
 -   Ingest **large ecommerce datasets (5GB+)**\
 -   Use **Unity Catalog + Volumes** for governed storage\
 -   Practice **Apache Spark transformations**\
-<<<<<<< Updated upstream
--   Prepare data for **NLP, sentiment analysis & BI**\
-=======
 -   Prepare data for **AI, ML & BI use cases**\
->>>>>>> Stashed changes
 -   Maintain **Git-based version control** using Databricks Repos +
     GitHub
 
@@ -50,14 +34,10 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
             ↓
     Gold Layer (Aggregations, KPIs, Features)
             ↓
-<<<<<<< Updated upstream
-    BI / NLP / ML Models
-=======
     BI / AI / ML Models
 
 This architecture follows **industry best practices** used in companies
 like Netflix, Comcast, and Shell.
->>>>>>> Stashed changes
 
 ------------------------------------------------------------------------
 
@@ -73,11 +53,7 @@ like Netflix, Comcast, and Shell.
     ├── bronze/
     ├── silver/
     ├── gold/
-<<<<<<< Updated upstream
-    ├── nlp/
-=======
     ├── ai_ml/
->>>>>>> Stashed changes
     ├── schema_volume_setup/
     └── README.md
 
@@ -89,11 +65,7 @@ like Netflix, Comcast, and Shell.
 -   **Unity Catalog & Volumes**
 -   **Python / PySpark**
 -   **SQL**
-<<<<<<< Updated upstream
--   **NLP (Sentiment, Topic Modeling, BERT -- upcoming)**
-=======
 -   **AI & ML (Sentiment, Classification, Embeddings -- upcoming)**
->>>>>>> Stashed changes
 -   **GitHub (Version Control)**
 -   **Power BI (Downstream consumption -- upcoming)**
 
@@ -112,11 +84,7 @@ like Netflix, Comcast, and Shell.
 
 ------------------------------------------------------------------------
 
-<<<<<<< Updated upstream
-# 📅 Day 2 -- Apache Spark Fundamentals (10th Jan 2026)
-=======
 # 📅 Day 1 -- Databricks & Lakehouse Fundamentals
->>>>>>> Stashed changes
 
 **Focus:** Understanding Databricks platform, Lakehouse architecture,
 workspace structure, and enterprise use cases.
@@ -276,15 +244,10 @@ project structure (not toy examples)**
 
 ## 👤 Author
 
-<<<<<<< Updated upstream
-**Venkat M**\
-Databricks \| Apache Spark \| NLP \| Power BI \| AI Pipelines\
-=======
 **Venkat M**
 Data Engineering \| Databricks \| Apache Spark \| AI & ML \| Power BI \|
 Analytics Pipelines
 
->>>>>>> Stashed changes
 GitHub: https://github.com/venkatbilla2008
 
 ------------------------------------------------------------------------
