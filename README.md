@@ -36,12 +36,6 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
             ↓
     BI / AI / ML Models
 
-<<<<<<< Updated upstream
-This architecture follows **industry best practices** used in companies
-like Netflix, Comcast, and Shell.
-
-=======
->>>>>>> Stashed changes
 ------------------------------------------------------------------------
 
 ## 📂 Repository Structure
@@ -69,10 +63,7 @@ like Netflix, Comcast, and Shell.
 -   **Unity Catalog & Volumes**
 -   **Python / PySpark**
 -   **SQL**
-<<<<<<< Updated upstream
-=======
 -   **Delta Lake**
->>>>>>> Stashed changes
 -   **AI & ML (Sentiment, Classification, Embeddings -- upcoming)**
 -   **GitHub (Version Control)**
 -   **Power BI (Downstream consumption -- upcoming)**
@@ -83,12 +74,7 @@ like Netflix, Comcast, and Shell.
 
 -   Monthly ecommerce event data (e.g., `2019-Oct.csv`, `2019-Nov.csv`)\
 -   Large files (\~5GB+)\
--   Managed using:
-
-```{=html}
-<!-- -->
-```
-    /Volumes/workspace/ecommerce/ecommerce_data/
+-   Managed using: /Volumes/workspace/ecommerce/ecommerce_data/
 
 ------------------------------------------------------------------------
 
