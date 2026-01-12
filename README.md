@@ -158,14 +158,9 @@ mergeSchema - Databricks chat deep dives on data protection & governance
 
 ## 👤 Author
 
-<<<<<<< Updated upstream
 **Venkat M**
 Data Engineering \| Databricks \| Apache Spark \| AI & ML \| Power BI \|
 Analytics Pipelines
-=======
-**Venkat Billa**\
-Databricks \| Apache Spark \| Delta Lake \| AI & ML \| Power BI
->>>>>>> Stashed changes
 
 GitHub: https://github.com/venkatbilla2008
 
