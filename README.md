@@ -46,6 +46,7 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
     ├── Day 2 - Apache Spark
     ├── Day 3 - Advanced Spark Analytics
     ├── Day 4 - Delta Lake, Unity Catalog & Data Governance
+    ├── Day 5 - Incremental Pipelines & Delta Operations
     │
     ├── ingestion/
     ├── bronze/
@@ -74,7 +75,12 @@ architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
 
 -   Monthly ecommerce event data (e.g., `2019-Oct.csv`, `2019-Nov.csv`)\
 -   Large files (\~5GB+)\
--   Managed using: /Volumes/workspace/ecommerce/ecommerce_data/
+-   Managed using:
+
+```{=html}
+<!-- -->
+```
+    /Volumes/workspace/ecommerce/ecommerce_data/
 
 ------------------------------------------------------------------------
 
@@ -113,13 +119,99 @@ mergeSchema - Databricks chat deep dives on data protection & governance
 
 ------------------------------------------------------------------------
 
+# 📅 Day 5 -- Incremental Pipelines & Delta Lake Operations (13th Jan 2026)
+
+Day 5 focused on building **production-style incremental pipelines** and
+handling real-world failures and fixes using Delta Lake.
+
+### Topics & Work Completed
+
+#### 1. Incremental MERGE (Upsert Pattern)
+
+``` sql
+MERGE INTO workspace.ecommerce.events_oct AS target
+USING updates_view AS source
+ON target.user_session = source.user_session
+AND target.event_time = source.event_time
+AND target.product_id = source.product_id
+WHEN MATCHED THEN UPDATE SET *
+WHEN NOT MATCHED THEN INSERT *
+```
+
+-   Designed correct **business keys for MERGE**
+-   Handled update + insert in a single operation
+
+------------------------------------------------------------------------
+
+#### 2. Schema Alignment in MERGE
+
+-   Resolved **column mismatch issues**
+-   Added missing columns like `source_system` before MERGE
+-   Learned why schema alignment is critical for safe upserts
+
+------------------------------------------------------------------------
+
+#### 3. Timestamp Normalization
+
+``` python
+to_timestamp(col("event_time"), "dd-MM-yyyy HH:mm")
+```
+
+-   Fixed **CAST_INVALID_INPUT** errors
+-   Normalized timestamps to avoid pipeline failures
+
+------------------------------------------------------------------------
+
+#### 4. Delta Time Travel (Audit & Debugging)
+
+``` sql
+DESCRIBE HISTORY workspace.ecommerce.events_oct;
+SELECT * FROM workspace.ecommerce.events_oct VERSION AS OF 0;
+```
+
+-   Queried historical versions
+-   Understood rollback & audit use cases
+
+------------------------------------------------------------------------
+
+#### 5. Performance Optimization
+
+``` sql
+OPTIMIZE workspace.ecommerce.events_oct ZORDER BY (user_id, event_time);
+```
+
+-   Practiced **file compaction**
+-   Used **ZORDER** for query performance
+
+------------------------------------------------------------------------
+
+#### 6. Storage Cleanup
+
+``` sql
+VACUUM workspace.ecommerce.events_oct RETAIN 168 HOURS;
+```
+
+-   Managed old files safely
+-   Understood retention and cleanup strategies
+
+------------------------------------------------------------------------
+
+### Key Learnings from Day 5
+
+-   Incremental pipelines require **correct business keys**
+-   Schema alignment is mandatory for MERGE
+-   Timestamp normalization is essential for reliability
+-   Delta Lake provides **versioning, auditing, and rollback**
+-   OPTIMIZE & VACUUM are critical for **performance and cost control**
+-   These concepts are foundational for **AI & ML feature pipelines**
+
+------------------------------------------------------------------------
+
 ## 🚀 Why This Project Matters
 
--   Modern data engineering practices
--   Enterprise Lakehouse architecture
--   Scalable ingestion of large datasets
--   AI & ML ready pipelines
--   Production-style structure
+This repository demonstrates: - Modern data engineering practices -
+Enterprise Lakehouse architecture - Scalable ingestion of large
+datasets - AI & ML ready pipelines - Production-style structure
 
 ------------------------------------------------------------------------
 
@@ -133,20 +225,19 @@ mergeSchema - Databricks chat deep dives on data protection & governance
 
 ------------------------------------------------------------------------
 
-## 📌 Next Steps (Day 5 Preview)
+## 📌 Next Steps (Day 6 Preview)
 
--   Sessionization
--   OPTIMIZE & ZORDER
--   Data quality checks
--   Feature store design
+-   Sessionization (time-based user journeys)
+-   Drop-off & retention analysis
+-   Gold feature table design
+-   Feature store concepts
 
 ------------------------------------------------------------------------
 
 ## 👤 Author
 
-**Venkat M**
-Data Engineering \| Databricks \| Apache Spark \| AI & ML \| Power BI \|
-Analytics Pipelines
+**Venkat Murali**\
+Databricks \| Apache Spark \| Delta Lake \| AI & ML \| Power BI
 
 GitHub: https://github.com/venkatbilla2008
 
