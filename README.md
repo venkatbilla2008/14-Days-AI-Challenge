@@ -1,246 +1,132 @@
-# 🚀 14 Days AI Challenge -- Databricks Lakehouse + Apache Spark + AI & ML
+# 🚀 14 Days AI Challenge -- Databricks Lakehouse, Apache Spark & AI/ML
 
-This repository documents my hands-on journey through the **14 Days AI
-Challenge**, focused on building an **enterprise-grade Databricks
-Lakehouse architecture** for large-scale ecommerce data ingestion,
-transformation, and **AI & ML analytics**.
-
-The project demonstrates: - Real-world **data engineering workflows** -
-**Unity Catalog + Volumes** based ingestion - **Bronze → Silver → Gold**
-architecture - **Apache Spark (PySpark) fundamentals** - Preparation for
-**AI, ML & Power BI integration**
+This repository documents my **hands-on 14 Days AI Challenge**, focused
+on building an **enterprise-grade Databricks Lakehouse platform**
+end-to-end --- from raw ingestion to governed, secure, analytics-ready
+data for **AI & ML use cases**.
 
 ------------------------------------------------------------------------
 
 ## 📌 Project Objectives
 
--   Build a **Lakehouse architecture** using Databricks\
--   Ingest **large ecommerce datasets (5GB+)**\
--   Use **Unity Catalog + Volumes** for governed storage\
--   Practice **Apache Spark transformations**\
--   Prepare data for **AI, ML & BI use cases**\
--   Maintain **Git-based version control** using Databricks Repos +
-    GitHub
+-   Design **Bronze → Silver → Gold** Lakehouse architecture\
+-   Build **incremental & batch pipelines** using Delta Lake\
+-   Implement **data quality, deduplication & validation**\
+-   Orchestrate pipelines using **Databricks Jobs**\
+-   Apply **Unity Catalog governance & access control**\
+-   Prepare datasets for **AI, ML & BI consumption**
 
 ------------------------------------------------------------------------
 
-## 🏗️ Architecture Overview (Lakehouse Pattern)
+## 🏗️ Architecture Overview
 
-    Source (CSV / ZIP files)
+    Raw Data (CSV / Parquet)
             ↓
-    Bronze Layer (Raw data in Volumes)
+    Bronze Layer  (Raw, append-only)
             ↓
-    Silver Layer (Cleaned & validated data)
+    Silver Layer  (Cleaned, deduplicated, validated)
             ↓
-    Gold Layer (Aggregations, KPIs, Features)
+    Gold Layer    (Business KPIs, aggregates, ML features)
             ↓
-    BI / AI / ML Models
+    Analytics / AI / ML / BI
+
+------------------------------------------------------------------------
+
+## 🧰 Tech Stack
+
+-   Databricks (Apache Spark)
+-   Delta Lake
+-   Unity Catalog & Volumes
+-   Python / PySpark / SQL
+-   GitHub (Databricks Repos)
+-   AI & ML (upcoming)
 
 ------------------------------------------------------------------------
 
 ## 📂 Repository Structure
 
     14-Days-AI-Challenge/
-    │
-    ├── Day 1 - Databricks & Lakehouse Basics
-    ├── Day 2 - Apache Spark
-    ├── Day 3 - Advanced Spark Analytics
-    ├── Day 4 - Delta Lake, Unity Catalog & Data Governance
-    ├── Day 5 - Incremental Pipelines & Delta Operations
-    │
-    ├── ingestion/
-    ├── bronze/
-    ├── silver/
-    ├── gold/
-    ├── ai_ml/
-    ├── schema_volume_setup/
+    ├── Day 1–5  (Foundations, Delta, Incremental Pipelines)
+    ├── Day 6    (Bronze–Silver–Gold Architecture)
+    ├── Day 7    (Pipeline Orchestration & Scheduling)
+    ├── Day 8    (Unity Catalog & Governance)
+    ├── notebooks/
+    │   ├── 01_Bronze_Ingestion
+    │   ├── 02_Silver_Transformation
+    │   └── 03_Gold_Aggregation
     └── README.md
 
 ------------------------------------------------------------------------
 
-## 🧰 Tech Stack
+## 📅 Day 6 -- Bronze → Silver → Gold Architecture
 
--   **Databricks (Apache Spark)**
--   **Unity Catalog & Volumes**
--   **Python / PySpark**
--   **SQL**
--   **Delta Lake**
--   **AI & ML (Sentiment, Classification, Embeddings -- upcoming)**
--   **GitHub (Version Control)**
--   **Power BI (Downstream consumption -- upcoming)**
+**Focus:** Designing clean, scalable Lakehouse layers.
 
-------------------------------------------------------------------------
+**Key Work** - Designed **3-layer Lakehouse architecture** - Built
+**Bronze layer** for raw ingestion - Built **Silver layer** with: -
+Timestamp normalization - Null handling - Business-key-based
+deduplication - Built **Gold layer** with business KPIs: - Distinct
+users per product - Distinct sessions per product - Distinct buyers per
+category
 
-## 📊 Dataset
-
--   Monthly ecommerce event data (e.g., `2019-Oct.csv`, `2019-Nov.csv`)\
--   Large files (\~5GB+)\
--   Managed using:
-
-```{=html}
-<!-- -->
-```
-    /Volumes/workspace/ecommerce/ecommerce_data/
+**Key Learning** \> Clean Silver data is mandatory for accurate KPIs and
+reliable AI/ML features.
 
 ------------------------------------------------------------------------
 
-# 📅 Day 1 -- Databricks & Lakehouse Fundamentals
+## 📅 Day 7 -- Pipeline Orchestration & Automation
 
-Topics: - Databricks vs Pandas/Hadoop - Lakehouse architecture (Bronze,
-Silver, Gold) - Workspace structure - Unity Catalog & Volumes - Industry
-use cases: Netflix, Comcast, Shell
+**Focus:** Moving from notebooks to production pipelines.
 
-------------------------------------------------------------------------
+**Key Work** - Created **separate notebooks** for Bronze, Silver, Gold -
+Added **parameter widgets** for reusability - Built **multi-task
+Databricks Jobs** - Configured **task dependencies** (Bronze → Silver →
+Gold) - Scheduled automated pipeline execution
 
-# 📅 Day 2 -- Apache Spark Fundamentals (10th Jan 2026)
-
-Topics: - Spark Architecture -- Driver, Executors, DAG - Lazy
-evaluation - DataFrames vs RDDs - Notebook magic commands (%python,
-%sql, %fs) - Reading CSV, Parquet, JSON - Core transformations - Writing
-Parquet & tables
+**Key Learning** \> Modular notebooks + orchestration = production-ready
+pipelines.
 
 ------------------------------------------------------------------------
 
-# 📅 Day 3 -- Advanced Spark Analytics (11th Jan 2026)
+## 📅 Day 8 -- Unity Catalog & Data Governance
 
-Topics: - Parquet reads from Volumes - Window functions (running
-totals) - Funnel analysis (view → cart → purchase) - Conversion without
-pivot - Catalyst & lazy evaluation deep dive - Databricks chat
-discussions on DAGs, shuffles, execution planning
+**Focus:** Platform security, governance & controlled access.
 
-------------------------------------------------------------------------
+**Key Work** - Created **catalog & schemas** (Bronze, Silver, Gold) -
+Registered **Delta tables** under Unity Catalog - Applied **catalog,
+schema & table-level GRANTS** - Worked with **principals
+(users/groups)** - Built **controlled views** for secure data access
 
-# 📅 Day 4 -- Delta Lake, Unity Catalog & Data Governance (12th Jan 2026)
-
-Topics: - saveAsTable and managed Delta tables - Unity Catalog governed
-storage - DESCRIBE DETAIL for physical location - CTAS (Create Table As
-Select) pattern - Schema enforcement testing - Schema evolution using
-mergeSchema - Databricks chat deep dives on data protection & governance
-
-------------------------------------------------------------------------
-
-# 📅 Day 5 -- Incremental Pipelines & Delta Lake Operations (13th Jan 2026)
-
-Day 5 focused on building **production-style incremental pipelines** and
-handling real-world failures and fixes using Delta Lake.
-
-### Topics & Work Completed
-
-#### 1. Incremental MERGE (Upsert Pattern)
-
-``` sql
-MERGE INTO workspace.ecommerce.events_oct AS target
-USING updates_view AS source
-ON target.user_session = source.user_session
-AND target.event_time = source.event_time
-AND target.product_id = source.product_id
-WHEN MATCHED THEN UPDATE SET *
-WHEN NOT MATCHED THEN INSERT *
-```
-
--   Designed correct **business keys for MERGE**
--   Handled update + insert in a single operation
-
-------------------------------------------------------------------------
-
-#### 2. Schema Alignment in MERGE
-
--   Resolved **column mismatch issues**
--   Added missing columns like `source_system` before MERGE
--   Learned why schema alignment is critical for safe upserts
-
-------------------------------------------------------------------------
-
-#### 3. Timestamp Normalization
-
-``` python
-to_timestamp(col("event_time"), "dd-MM-yyyy HH:mm")
-```
-
--   Fixed **CAST_INVALID_INPUT** errors
--   Normalized timestamps to avoid pipeline failures
-
-------------------------------------------------------------------------
-
-#### 4. Delta Time Travel (Audit & Debugging)
-
-``` sql
-DESCRIBE HISTORY workspace.ecommerce.events_oct;
-SELECT * FROM workspace.ecommerce.events_oct VERSION AS OF 0;
-```
-
--   Queried historical versions
--   Understood rollback & audit use cases
-
-------------------------------------------------------------------------
-
-#### 5. Performance Optimization
-
-``` sql
-OPTIMIZE workspace.ecommerce.events_oct ZORDER BY (user_id, event_time);
-```
-
--   Practiced **file compaction**
--   Used **ZORDER** for query performance
-
-------------------------------------------------------------------------
-
-#### 6. Storage Cleanup
-
-``` sql
-VACUUM workspace.ecommerce.events_oct RETAIN 168 HOURS;
-```
-
--   Managed old files safely
--   Understood retention and cleanup strategies
-
-------------------------------------------------------------------------
-
-### Key Learnings from Day 5
-
--   Incremental pipelines require **correct business keys**
--   Schema alignment is mandatory for MERGE
--   Timestamp normalization is essential for reliability
--   Delta Lake provides **versioning, auditing, and rollback**
--   OPTIMIZE & VACUUM are critical for **performance and cost control**
--   These concepts are foundational for **AI & ML feature pipelines**
+**Key Learning** \> Governance is foundational for scalable AI & ML
+platforms.
 
 ------------------------------------------------------------------------
 
 ## 🚀 Why This Project Matters
 
-This repository demonstrates: - Modern data engineering practices -
-Enterprise Lakehouse architecture - Scalable ingestion of large
-datasets - AI & ML ready pipelines - Production-style structure
+This project demonstrates: - Enterprise Lakehouse design - Incremental &
+batch processing - Pipeline orchestration - Data governance & security -
+AI & ML readiness
 
 ------------------------------------------------------------------------
 
-## 🤖 AI & ML Use Cases (Upcoming)
+## 📌 Next Steps
 
--   Sentiment Analysis\
--   Topic Modeling\
--   Emotion detection\
--   Feature engineering\
--   BERT embeddings
-
-------------------------------------------------------------------------
-
-## 📌 Next Steps (Day 6 Preview)
-
--   Sessionization (time-based user journeys)
--   Drop-off & retention analysis
--   Gold feature table design
--   Feature store concepts
+-   Row-level security (RLS)
+-   Column masking
+-   Data quality expectations
+-   Monitoring & alerting
+-   Feature engineering for ML
 
 ------------------------------------------------------------------------
 
 ## 👤 Author
 
-**Venkat Murali**\
-Databricks \| Apache Spark \| Delta Lake \| AI & ML \| Power BI
+**Venkat M**\
+Databricks \| Apache Spark \| Delta Lake \| Unity Catalog \| AI & ML
 
 GitHub: https://github.com/venkatbilla2008
 
 ------------------------------------------------------------------------
 
-## ⭐ If you find this useful, feel free to star the repo!
+⭐ If you find this useful, feel free to star the repo!
