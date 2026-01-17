@@ -9,11 +9,11 @@ data for **AI & ML use cases**.
 
 ## 📌 Project Objectives
 
--   Design **Bronze → Silver → Gold** Lakehouse architecture\
--   Build **incremental & batch pipelines** using Delta Lake\
--   Implement **data quality, deduplication & validation**\
--   Orchestrate pipelines using **Databricks Jobs**\
--   Apply **Unity Catalog governance & access control**\
+-   Design **Bronze → Silver → Gold** Lakehouse architecture
+-   Build **incremental & batch pipelines** using Delta Lake
+-   Implement **data quality, deduplication & validation**
+-   Orchestrate pipelines using **Databricks Jobs**
+-   Apply **Unity Catalog governance & access control**
 -   Prepare datasets for **AI, ML & BI consumption**
 
 ------------------------------------------------------------------------
